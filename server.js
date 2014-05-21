@@ -5,11 +5,19 @@ var nhl     = require("./lib/nhl-cache")
 var app = express.createServer()
 
 app.get("/", function(req, rsp){
-  rsp.send("welcome to the nhl api\n")
+  rsp.send("Welcome to the makeshift nhl api\n")
 })
 
+app.configure(function(){
+  app.use(function(req, rsp, next){
+    rsp.header("Access-Control-Allow-Origin", "*")
+    rsp.header("Access-Control-Allow-Headers", "X-Requested-With")
+    next()
+  })
+});
+
 app.get("/:team/:season?", function(req, rsp){
-  nhl.team(req.params.team, req.params.season || "20112012", function(players){
+  nhl.team(req.params.team, req.params.season || "20132014", function(players){
     if(players){
       var body = JSON.stringify(players, null, 2) + "\n"
       rsp.send(body, {"Content-Type": "application/json"})
