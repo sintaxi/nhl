@@ -4,7 +4,7 @@
   "description": "A makeshift NHL API",
   "dependencies": {
     "jsdom": "0.2.9",
-    "express": "2.5.0",
+    "express": "3.x",
     "redis": "0.6.7"
   }
 }
