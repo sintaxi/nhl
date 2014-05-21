@@ -14,6 +14,7 @@ app.get("/:team/:season?", function(req, rsp){
   nhl.team(req.params.team, req.params.season || "20132014", function(players){
     if(players){
       var body = JSON.stringify(players, null, 2) + "\n"
+      rsp.header("Content-Type", "application/json")
       rsp.send(body)
     }else{
       rsp.send("stats not found\n", 404)
