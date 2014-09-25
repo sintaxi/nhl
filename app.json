@@ -1,0 +1,7 @@
+{
+  "name": "Demo NHL API",
+  "description": "A Nodejs Example",
+  "repository": "https://github.com/sintaxi/nhl-api",
+  "logo": "https://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "nhl", "api"]
+}
