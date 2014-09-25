@@ -1,5 +1,5 @@
 var express = require("express")
-var port    = process.env.PORT || 8001
+var port    = process.env.PORT || 80
 var nhl     = require("./lib/nhl-cache")
 
 var app = express.createServer()
