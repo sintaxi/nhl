@@ -2,6 +2,7 @@
   "name": "nhl-api",
   "version": "0.1.0",
   "description": "A makeshift NHL API",
+  "main": "./server.js",
   "dependencies": {
     "jsdom": "0.2.9",
     "express": "3.x",
