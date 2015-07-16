@@ -8,23 +8,44 @@ json payloads with redis (set to 2 min).
 
     npm install
 
+You’ll also need to install redis, either from [the website](http://redis.io/) or by using the command line:
+
+    curl -O http://download.redis.io/releases/redis-2.8.19.tar.gz
+    tar -xzvf redis-2.8.21.tar.gz
+    cd redis-2.8.21.tar.gz
+    make
+    sudo make install
+
+After it’s installed, start redis using the command:
+
+  redis-server
+
+If you restart your machine, you’ll need to run this command again. Otherwise, redis is now running in the background.
+
 ## Run
+
+The following command will start the server:
 
     node server.js
 
+The server defaults to port `80`, which may require `sudo` or admin privledges. Alternatively, you can specify a different port while you’re developing locally:
+
+    PORT=8001 node server.js
+    # Available at http://localhost:8001
+
 ## API
 
-Grab the team stats...
+In your browser or by using `curl` in the command line, you can now grab the team stats…
 
     http://localhost:8001/oilers
 
-OR, specify a season...
+Or, specify a season…
 
     http://localhost:8001/oilers/20052006
 
 ## License
 
-Copyright 2011 Brock Whitten
+Copyright 2011–2015 [Brock Whitten](http://twitter.com/sintaxi)
 All rights reserved.
 
 Permission is hereby granted, free of charge, to any person
@@ -47,4 +68,3 @@ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
-
