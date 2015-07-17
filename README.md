@@ -18,7 +18,7 @@ You’ll also need to install redis, either from [the website](http://redis.io/)
 
 After it’s installed, start redis using the command:
 
-  redis-server
+    redis-server
 
 If you restart your machine, you’ll need to run this command again. Otherwise, redis is now running in the background.
 
